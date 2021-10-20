@@ -25,7 +25,8 @@ void ListInsertAtEnd(SqList &L, ElemType e)
     if (L->length == L->maxSize)
     {
         cout << "\'" << e << "\'"
-             << " is insert failed,maybe your SqList is full,you should expand your SqList!" << endl;
+             << " is insert failed,maybe your SqList is 1"
+             << "full,you should expand your SqList!" << endl;
         return;
     }
     L->data[L->length] = e;
@@ -38,7 +39,8 @@ void ListInsert(SqList &L, ElemType e, int location)
     if (L->length == L->maxSize)
     {
         cout << "\'" << e << "\'"
-             << " is insert failed,maybe your SqList is full,you should expand your SqList!" << endl;
+             << " is insert failed,maybe your SqList is 1"
+             << "full,you should expand your SqList!" << endl;
         return;
     }
     if (location <= L->length + 1 && location > 0)
@@ -52,11 +54,12 @@ void ListInsert(SqList &L, ElemType e, int location)
     }
     else
     {
-        cout << "insert failed,the location \'" << location << "\' is illegal" << endl;
+        cout << "insert failed,the location \'"  
+        <<location << "\' is illegal" << endl;
     }
 }
 
-// Insert element
+// Delete element
 void ListDelete(SqList &L, int location)
 {
     if (location <= L->length && location > 0)
@@ -107,7 +110,8 @@ void OutputSqListByLocate(SqList L, int location)
         cout << "the SqList is empty" << endl;
         return;
     }
-    cout << "Output the " << location << " element is :" << L->data[location - 1] << endl;
+    cout << "Output the " << location 
+    << " element is :" << L->data[location - 1] << endl;
 }
 
 // Locate the element
@@ -137,6 +141,7 @@ void LocateElem(SqList L, ElemType e)
     }
 }
 
+// Destroy SqList
 void DestroyList(SqList &L)
 {
     if (L)
