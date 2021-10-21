@@ -54,8 +54,8 @@ void ListInsert(SqList &L, ElemType e, int location)
     }
     else
     {
-        cout << "insert failed,the location \'"  
-        <<location << "\' is illegal" << endl;
+        cout << "insert failed,the location \'"
+             << location << "\' is illegal" << endl;
     }
 }
 
@@ -110,8 +110,13 @@ void OutputSqListByLocate(SqList L, int location)
         cout << "the SqList is empty" << endl;
         return;
     }
-    cout << "Output the " << location 
-    << " element is :" << L->data[location - 1] << endl;
+    if (location > L->length || location <= 0)
+    {
+        cout << "the location is illegal" << endl;
+        return;
+    }
+    cout << "Output the " << location
+         << " element is :" << L->data[location - 1] << endl;
 }
 
 // Locate the element
