@@ -54,7 +54,7 @@ void DeQueue(SqQueQue &Q)
 // destroy the queue
 void DestroyQueue(SqQueQue &Q)
 {
-    delete (Q->data);
+    delete[](Q->data);
     delete (Q);
 }
 
